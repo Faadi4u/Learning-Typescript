@@ -1,7 +1,15 @@
-# DSA in JS
-# Time complexity
-# 1.constant or O(1)
+# TypeScript Learning Repository
 
-i. the task or operation that will be performed in one Operation or step.
+This repository is dedicated to learning **TypeScript** from fundamentals to advanced concepts using a **clean, structured, and practical approach**.
 
-ii. when the exact value is given.
+Each concept is separated into its own file and folder to keep learning organized and easy to follow.
+
+---
+
+## 📌 Goals
+- Learn TypeScript step by step
+- Understand strong typing in JavaScript
+- Practice clean project structure
+- Build a solid foundation for real-world projects
+
+---
