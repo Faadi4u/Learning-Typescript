@@ -13,3 +13,14 @@ Each concept is separated into its own file and folder to keep learning organize
 - Build a solid foundation for real-world projects
 
 ---
+## 📂 Current Topics
+
+# 01_BasicTypes.ts – Core TypeScript types and fundamentals
+
+This file covers:
+- Primitive vs Non-Primitive values
+- Basic TypeScript types
+- Type inference and type annotations
+- Enums
+
+The goal of this file is to understand **how TypeScript types work and how JavaScript behaves under the hood**.
