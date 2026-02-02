@@ -23,4 +23,12 @@ This file covers:
 - Type inference and type annotations
 - Enums
 
-The goal of this file is to understand **how TypeScript types work and how JavaScript behaves under the hood**.
+# 02_Interfaces_and_TypeAliases.ts
+
+This file covers:
+- Interfaces (Extend , Merge and Optional)
+- Type Alias (Union And Intersection)
+- Difference between Type Alias and Interface
+
+
+The goal of these files is to understand **how TypeScript types work and how JavaScript behaves under the hood**.
