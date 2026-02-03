@@ -30,5 +30,24 @@ This file covers:
 - Type Alias (Union And Intersection)
 - Difference between Type Alias and Interface
 
+# 02_Classes_&_Objects.ts
+
+This File Covers:
+
+Completed:
+- 1.Classes and Objects 
+- 2.Class Definition
+- 3.Constructors
+
+Pending:
+- 4.Access Modifiers ( Public , Private , Protected )
+- 5.Readonly Properties
+- 6.Optional Properties
+- 7.Parameter Properties
+- 8.Getters and setters
+- 9.Static Members
+- 10.Abstract classes and methods 
+
+---
 
 The goal of these files is to understand **how TypeScript types work and how JavaScript behaves under the hood**.
