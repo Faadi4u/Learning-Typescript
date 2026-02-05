@@ -112,3 +112,92 @@ let b1 = new metalMouseMaker();
 }
 
 }
+
+{//6.Readonly Properties
+
+class User {
+    // if you want your values should be fixed means not changable just add readonly after public
+    constructor(public readonly name: string ){} 
+    changeName = () => {
+        // this.name = name // we can't access name bcz name is readonly property.
+    }
+}
+let U1 = new User("Fahad") // So fahad is fixed here we are not able to change it.
+//  U1.changeName("Abdullah") // But if we compile it, it gives the abddullah bcz typescript just gives error that this is not right.
+
+
+}
+
+{//7.Optional Properties
+
+class User {
+    //If you want some field to be optional just add (?) after variable and before colon(:) 
+    constructor( public name: string , public gender?: string){} // Here gender is optional means you can give or not your's choice.
+}    
+let u2 = new User("Fahad" , "male"); // Im male Hahah....
+
+}
+
+{//8.Parameter Properties
+// There are two ways to define constructor Varibles
+
+{// 1st Way:
+    class User {
+    // First we create variables.
+    public name;
+    public age;
+    public admin;
+constructor(name:string , age: number ,admin: boolean){ // then we create parameters
+    this.name = name; // Then we set the values of paramater to variables.
+    this.age = age;
+    this.admin = Boolean
+
+}    
+}
+}
+
+{// 2nd way
+// We are creating variables and parameters just in one line no need to use this
+class User_2 {
+constructor(public name: string , public age: number){}
+// By this line we create variables and parameters in the same line.
+// This is what parameter properties called.
+// By adding just public to create variable and parameter also
+    
+}
+}
+
+}
+
+{// 9.Getters and setters
+
+{// Problem 
+class User_3 {
+    constructor(public name:string , public age: number){}   
+    // Getter we use 
+    getName(){
+        return this.name; 
+    }
+    // Getter we use 
+    setName(value: string){
+        this.name = value;
+    }
+
+    // for this we have to call getName() and setName()
+}    
+}    
+{//Solution
+class User_3 {
+    constructor(public name:string , public age:number){}
+    // Typescript gives us keywords to use get and set
+    get UserName(){ // if you want to add the name instead of user we get an error of duplicate name.
+        return this.name 
+    }
+
+    set userAge(value:string){
+        this.name = value
+    }
+}    
+}
+
+}
