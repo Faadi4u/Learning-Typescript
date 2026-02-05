@@ -13,7 +13,7 @@ Each concept is separated into its own file and folder to keep learning organize
 - Build a solid foundation for real-world projects
 
 ---
-## 📂 Current Topics
+## 📂 Current Learning Topics:
 
 # 01_BasicTypes.ts – Core TypeScript types and fundamentals
 
@@ -38,16 +38,23 @@ Completed:
 - 1.Classes and Objects 
 - 2.Class Definition
 - 3.Constructors
-
-Pending:
 - 4.Access Modifiers ( Public , Private , Protected )
 - 5.Readonly Properties
 - 6.Optional Properties
 - 7.Parameter Properties
 - 8.Getters and setters
+
+Pending:
 - 9.Static Members
 - 10.Abstract classes and methods 
 
 ---
+## 📂 Current Practice Topics:
 
+# 01_BasicTypes_Problems.ts
+This file covers:
+🟢 EASY (Basic understanding) - 3 Problems
+🟡 MEDIUM (Type safety thinking) - 3 Problems
+🔴 HARD (Real-world usage) - 3 Problems
+---
 The goal of these files is to understand **how TypeScript types work and how JavaScript behaves under the hood**.
