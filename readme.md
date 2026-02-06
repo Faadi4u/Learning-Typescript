@@ -43,10 +43,9 @@ Completed:
 - 6.Optional Properties
 - 7.Parameter Properties
 - 8.Getters and setters
-
-Pending:
 - 9.Static Members
 - 10.Abstract classes and methods 
+
 
 ---
 ## 📂 Current Practice Topics:
