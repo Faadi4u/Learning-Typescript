@@ -30,7 +30,7 @@ This file covers:
 - Type Alias (Union And Intersection)
 - Difference between Type Alias and Interface
 
-# 02_Classes_&_Objects.ts
+# 03_Classes_&_Objects.ts
 
 This File Covers:
 
@@ -46,14 +46,23 @@ Completed:
 - 9.Static Members
 - 10.Abstract classes and methods 
 
-
 ---
-## 📂 Current Practice Topics:
+
+## 📂 Current Practice Problems Topics:
 
 # 01_BasicTypes_Problems.ts
 This file covers:
 🟢 EASY (Basic understanding) - 3 Problems
 🟡 MEDIUM (Type safety thinking) - 3 Problems
 🔴 HARD (Real-world usage) - 3 Problems
+
 ---
+# 02_Interface_problems.ts
+This file covers:
+🟢 EASY (Basic understanding) - 3 Problems
+🟡 MEDIUM (Type safety thinking) - 3 Problems
+🔴 HARD (Real-world usage) - 3 Problems
+
+---
+
 The goal of these files is to understand **how TypeScript types work and how JavaScript behaves under the hood**.
