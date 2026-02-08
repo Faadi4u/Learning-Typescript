@@ -48,6 +48,30 @@ Completed:
 
 ---
 
+# 04_Functions.ts
+
+This File Covers:
+
+- Function Types
+- Optional and Default parameter
+- Rest Parameters
+- Function Overloading
+
+---
+
+# 05_Generics.ts
+
+This File Covers:
+
+Completed:
+- Generic Functions
+
+Pending:
+- Generic Interfaces
+- Generic Classes
+
+---
+
 ## 📂 Current Practice Problems Topics:
 
 # 01_BasicTypes_Problems.ts
