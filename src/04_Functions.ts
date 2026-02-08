@@ -1,6 +1,7 @@
 //Function Types
 //Optional and Default parameter
 // Rest Parameters
+// Function Overloading
 
 {// Function Types
 
@@ -39,5 +40,19 @@ function sum(...arg : number[]){
 }  
 
 sum(1,2,3,4,5,56,6,7,8,89)
+
+}
+
+{// Function Overloading
+
+// Function overloading is mostly used for API design
+// Most Common Use:
+
+function parse(input : string):Number
+function parse(input : number):string
+
+function parse(input: any){
+    return typeof input === "string" ? Number(input) : input.toString()
+}
 
 }
