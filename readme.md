@@ -89,4 +89,12 @@ This file covers:
 
 ---
 
+# 03_TypeAliases_problems.ts
+This file covers:
+🟢 EASY (Basic understanding) - 3 Problems
+🟡 MEDIUM (Type safety thinking) - 3 Problems
+🔴 HARD (Real-world usage) - 3 Problems
+
+---
+
 The goal of these files is to understand **how TypeScript types work and how JavaScript behaves under the hood**.
