@@ -1,5 +1,5 @@
-//Function Types
-//Optional and Default parameter
+// Function Types
+// Optional and Default parameter
 // Rest Parameters
 // Function Overloading
 
