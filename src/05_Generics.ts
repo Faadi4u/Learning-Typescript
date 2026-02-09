@@ -29,3 +29,27 @@
 
 }
 
+{// Generic Interfaces 
+
+interface User<T> {
+    age : number;
+    name : string;
+    api : T
+}    
+
+function userValues(obj:User<string>): void{
+    obj.age
+}
+userValues({age : 12 , name : "Fahad" , api : "FAhad12233"})
+
+}
+
+{// Generic Classes
+
+class bottleMaker<T>{
+    constructor(public key:T){}
+} 
+
+let b1 = new bottleMaker(12); // It infer automatically by using generics.
+
+}

@@ -62,11 +62,7 @@ This File Covers:
 # 05_Generics.ts
 
 This File Covers:
-
-Completed:
 - Generic Functions
-
-Pending:
 - Generic Interfaces
 - Generic Classes
 
