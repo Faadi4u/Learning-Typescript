@@ -1,11 +1,12 @@
 import mongoose , {Schema , model , InferSchemaType} from "mongoose";
+import bcrypt from "bcrypt"
 
 export const userSchema = new Schema({ 
     userName : {
             type : String,
             required : true,
             trim : true,
-            minLength : 3,
+            minlength : 3,
             maxlength : 50,
         },
         email : {
@@ -18,7 +19,6 @@ export const userSchema = new Schema({
         },
         password : {
             type : String,
-            trim : true,
             required: true,
             select : false
         },
@@ -29,6 +29,16 @@ export const userSchema = new Schema({
         }
 },{timestamps:true})
 
+// Hash Password using bcrypt
+userSchema.pre("save" , async function(){
+    if(!this.isModified("password")) return;
+
+    const salt = await bcrypt.genSalt(10); 
+    this.password = await bcrypt.hash(this.password , salt);
+})
+
+
 export type User = InferSchemaType<typeof userSchema>;
 
 export const userModel = model<User>("User" , userSchema)
+
