@@ -18,10 +18,16 @@ The purpose of this backend is to practice:
 ## 📂 Project Structure
 
 src/
-- modules/
-- core/
+- controllers/
+- DB/
 - middlewares/
 - utils/
+- routes/
+- models/
+- app.ts
+- constant.ts
+- server.ts
+
 
 ---
 
@@ -58,6 +64,12 @@ npm start
 - Build scalable folder structure
 
 ---
+
+##  Implemented so Far:
+- Production Grade Structure
+- Database Connection
+- User Schema Model
+
 
 ## 🧠 Notes
 
