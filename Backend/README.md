@@ -68,7 +68,8 @@ npm start
 ##  Implemented so Far:
 - Production Grade Structure
 - Database Connection
-- User Schema Model
+- User Schema Model:
+     - Password is hashed and compared using Bcrypt
 
 
 ## 🧠 Notes

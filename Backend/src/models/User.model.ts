@@ -1,4 +1,4 @@
-import mongoose , {Schema , model , InferSchemaType} from "mongoose";
+import mongoose , {Schema , model , Model} from "mongoose";
 import bcrypt from "bcrypt"
 
 export const userSchema = new Schema({ 
@@ -29,6 +29,11 @@ export const userSchema = new Schema({
         }
 },{timestamps:true})
 
+userSchema.index(
+    {email : 1 },
+    {unique : true}
+)
+
 // Hash Password using bcrypt
 userSchema.pre("save" , async function(){
     if(!this.isModified("password")) return;
@@ -38,7 +43,24 @@ userSchema.pre("save" , async function(){
 })
 
 
-export type User = InferSchemaType<typeof userSchema>;
+interface userMethods{
+    comparePassword(userPassword: string) : Promise<boolean>;
+}
 
-export const userModel = model<User>("User" , userSchema)
+userSchema.methods.comparePassword = async function(userPassword : string){
+    return bcrypt.compare(userPassword , this.password);
+};
+
+interface userFields {
+    userName : string,
+    email : string,
+    password : string,
+    role : "user" | "admin",
+    createdAt : Date ,
+    updatedAt : Date,
+};
+
+type userModelType = mongoose.Model<userFields , {} , userMethods >;
+
+export const userModel = model<userFields , userModelType>("User" , userSchema);
 
