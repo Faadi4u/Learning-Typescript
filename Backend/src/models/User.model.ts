@@ -2,10 +2,6 @@ import mongoose, { Schema, model, Model, Document } from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET!; // "!" this tells typescript we have this variable.
-const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET!;
-const JWT_ACCESS_EXPIRES_IN = process.env.JWT_ACCESS_EXPIRES_IN!;
-const JWT_REFRESH_EXPIRES_IN = process.env.JWT_REFRESH_EXPIRES_IN!;
 
 interface userFields extends Document {
   userName: string;
@@ -30,9 +26,7 @@ export const userSchema = new Schema(
       type: String,
       required: true,
       trim: true,
-      unique: true,
       lowercase: true,
-      index: true,
     },
     password: {
       type: String,
@@ -78,16 +72,19 @@ userSchema.methods.comparePassword = async function (
 };
 
 userSchema.methods.generateAccessToken = function (this: userFields) {
+    const secret = process.env.JWT_ACCESS_SECRET
   const payload = { id: this._id, email: this.email, role: this.role };
-  return jwt.sign(payload, JWT_ACCESS_SECRET, {
-    expiresIn: JWT_ACCESS_EXPIRES_IN as "15m",
+  return jwt.sign(payload, secret as string, {
+    expiresIn: process.env.JWT_ACCESS_EXPIRES_IN as "15m",
   });
 };
 
 userSchema.methods.generateRefreshToken = function (this: userFields) {
+  const secret = process.env.JWT_ACCESS_SECRET
+  console.log("SECRET:", process.env.ACCESS_TOKEN_SECRET);
   const payload = { id: this._id, email: this.email };
-  return jwt.sign(payload, JWT_REFRESH_SECRET, {
-    expiresIn: JWT_REFRESH_EXPIRES_IN as "7d", 
+  return jwt.sign(payload, secret as string, {
+    expiresIn: process.env.JWT_REFRESH_EXPIRES_IN as "7d", 
   });
 };
 userSchema.methods.addRefreshToken = function (
@@ -100,7 +97,7 @@ userSchema.methods.removeRefreshToken = function (
   this: userFields,
   token: string,
 ) {
-  this.refreshToken = this.refreshToken.filter((t) => t !== token);
+  this.refreshToken.filter((t) => t !== token);
 };
 
 type userModelType = mongoose.Model<userFields, {}, userMethods>;

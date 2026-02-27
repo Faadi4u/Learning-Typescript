@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
-import {app} from "./app.ts"
-import {connectDB} from "./DB/db.ts"
+dotenv.config();
 
-dotenv.config({path: "./.env"})
+import {app} from "./app.ts";
+import {connectDB} from "./DB/db.ts";
+
 
 const port = process.env.PORT || 7000
 

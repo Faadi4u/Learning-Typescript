@@ -81,6 +81,7 @@ npm start
      JWT refresh token generation & storage
      Add/remove refresh token methods
 - TypeScript interfaces for model methods
+- Register Auth Flow complete
 
 ## 🧠 Notes
 
