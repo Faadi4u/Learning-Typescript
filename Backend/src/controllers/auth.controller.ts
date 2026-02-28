@@ -1,6 +1,7 @@
 import type { Request , Response } from "express";
 import { userModel } from "../models/User.model.ts";
 
+// Register User
 export const register = async (req: Request , res: Response) => {
     try {
         const {userName , email , password} = req.body;
@@ -36,7 +37,7 @@ export const register = async (req: Request , res: Response) => {
         // store refresh token 
         user.addRefreshToken(refreshToken);
         await user.save();
-("Returning success response");
+
         // Return Response
         return res.status(201).json({
             success : true,
@@ -60,3 +61,67 @@ export const register = async (req: Request , res: Response) => {
         })
     }
 }   
+
+// Login User
+export const login = async (req: Request , res: Response) => {
+    try {
+        const {email , password} = req.body;
+
+        // Basic Validation 
+        if(!email || !password){
+            res.status(409).json({
+                success: false,
+                message: "All fields required",
+            });
+        };
+
+        // Checking user exist or not
+        const user = await userModel.findOne({email}).select("+password");
+
+        if(!user){
+          return res.status(401).json({
+                success : false,
+                message : "Invalid credentials"
+            })
+        }
+
+        // Commpare password 
+        const isMatch =await  user.comparePassword(password)
+        if(!isMatch){
+            return res.status(401).json({
+                success : false,
+                message : "Invalid credentials",
+            });
+        }
+
+        // Generaate Tokens
+        const accessToken = await user.generateAccessToken();
+        const refreshToken = await user.generateRefreshToken();
+
+        // Store refresh token
+        user.addRefreshToken(refreshToken);
+        await user.save();
+
+        // return response 
+        return res.status(200).json({
+            success : true,
+            message : "Login Successfuly",
+            accessToken,
+            refreshToken,
+            user : {
+                email : user.email,
+                id : user._id,
+                role: user.role,
+                userName : user.userName
+            },
+             
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "Internal Server Error",
+            error
+        });
+    };
+}

@@ -72,7 +72,7 @@ userSchema.methods.comparePassword = async function (
 };
 
 userSchema.methods.generateAccessToken = function (this: userFields) {
-    const secret = process.env.JWT_ACCESS_SECRET
+  const secret = process.env.JWT_ACCESS_SECRET
   const payload = { id: this._id, email: this.email, role: this.role };
   return jwt.sign(payload, secret as string, {
     expiresIn: process.env.JWT_ACCESS_EXPIRES_IN as "15m",
@@ -81,7 +81,6 @@ userSchema.methods.generateAccessToken = function (this: userFields) {
 
 userSchema.methods.generateRefreshToken = function (this: userFields) {
   const secret = process.env.JWT_ACCESS_SECRET
-  console.log("SECRET:", process.env.ACCESS_TOKEN_SECRET);
   const payload = { id: this._id, email: this.email };
   return jwt.sign(payload, secret as string, {
     expiresIn: process.env.JWT_REFRESH_EXPIRES_IN as "7d", 

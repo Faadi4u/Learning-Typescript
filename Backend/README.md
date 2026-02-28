@@ -81,7 +81,20 @@ npm start
      JWT refresh token generation & storage
      Add/remove refresh token methods
 - TypeScript interfaces for model methods
-- Register Auth Flow complete
+
+- 📝 Auth Endpoints
+
+- **Register User**
+  - Validates `userName`, `email`, and `password`
+  - Hashes password using bcrypt
+  - Generates access and refresh tokens
+  - Stores refresh token in database
+
+- **Login User**
+  - Validates email and password
+  - Compares password using bcrypt
+  - Generates new access and refresh tokens
+  - Returns tokens and user info in JSON response
 
 ## 🧠 Notes
 
